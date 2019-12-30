@@ -1,8 +1,5 @@
 name: CI
-on:
-  push:
-    tags:
-      - *
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,4 +11,8 @@ jobs:
       - name: Compile
         run: sbt clean test:compile
       - name : Publish
+        on:
+          push:
+            tags:
+              - *
         run: sbt publisher/publish
