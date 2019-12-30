@@ -6,8 +6,8 @@ inThisBuild(
   Seq(
     scalaVersion := "2.13.1",
     version := "0.1.0-SNAPSHOT",
-    organization := "com.github.tmtsoftware.msocket",
-    organizationName := "ThoughtWorks",
+    organization := "com.github.poorva17",
+    organizationName := "Poorva",
     resolvers ++= Seq(
       Resolver.jcenterRepo,
       "jitpack" at "https://jitpack.io"
@@ -27,7 +27,10 @@ inThisBuild(
     libraryDependencies ++= Seq(
       compilerPlugin(`silencer-plugin`),
       `silencer-lib` % Provided
-    )
+    ),
+    githubOwner := "poorva17",
+    githubRepository := "msocket",
+    githubTokenSource := Some(TokenSource.Environment("TOKEN"))
   )
 )
 
