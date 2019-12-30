@@ -13,4 +13,7 @@ jobs:
       - name: Compile
         run: sbt clean test:compile
       - name : Publish
+        env: # Or as an environment variable
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CI: ${{ secrets.CI }}
         run: sbt publisher/publish
