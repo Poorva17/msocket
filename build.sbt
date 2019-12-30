@@ -30,7 +30,8 @@ inThisBuild(
     ),
     githubOwner := "poorva17",
     githubRepository := "msocket",
-    githubTokenSource := Some(TokenSource.Environment("TOKEN"))
+    githubUser := "poorva gokhale",
+    githubTokenSource := Some(TokenSource.Environment("GITHUB_TOKEN"))
   )
 )
 
@@ -41,7 +42,7 @@ lazy val `msocket-root` = project
     `portable-akka`.js,
     `msocket`,
     `example-service`
-  )
+  ).enablePlugins(GitVersioning)
 
 //************* akka-api *****************************************************
 
