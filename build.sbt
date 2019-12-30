@@ -5,6 +5,12 @@ import sbtcrossproject.CrossPlugin.autoImport.{CrossType, crossProject}
 inThisBuild(
   Seq(
     scalaVersion := "2.13.1",
+    version := {
+      sys.env.get("CI") match {
+        case Some("true") => version.value
+        case _            => "0.1.0-SNAPSHOT"
+      }
+    },
     organization := "com.github.poorva17",
     organizationName := "Poorva",
     resolvers ++= Seq(
